@@ -1,0 +1,32 @@
+<div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+  <?php if ($this->headline): ?>
+    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+
+
+	<div class="hoja_ti_image_float <?= $this->hoja_ti_position?> <?= $this->hoja_ti_width ?>">
+
+	<?php
+		if ( $this->hoja_ti_width == 'small' )
+			$width = 100;
+		elseif ( $this->hoja_ti_width == 'medium' )
+			$width = 150;
+		else
+			$width = 200;
+	?>
+
+	<?php foreach ( $this->image_files as $image ): ?>
+		{{image::<?= $image->path ?>?width=<?= $width ?>&mode=proportional}}
+	<?php endforeach; ?>
+
+	</div>
+
+  <?php echo $this->text; ?>
+
+  <br style="clear: both;" >
+
+</div>
+
+
+

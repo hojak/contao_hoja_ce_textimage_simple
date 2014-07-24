@@ -1,0 +1,29 @@
+div.hoja_ti_image_float {
+}
+
+div.hoja_ti_image_float img {
+	margin: 0 0 10px 0;
+}
+
+div.hoja_ti_image_float.right {
+	float: right;
+	margin-left: 10px;
+}
+
+div.hoja_ti_image_float.left {
+	float: left;
+	margin-right: 10px;
+}
+
+div.hoja_ti_image_float.small {
+	width: 100px;
+}
+
+div.hoja_ti_image_float.medium {
+	width: 150px;
+}
+
+div.hoja_ti_image_float.large {
+	width: 200px;
+}
+
