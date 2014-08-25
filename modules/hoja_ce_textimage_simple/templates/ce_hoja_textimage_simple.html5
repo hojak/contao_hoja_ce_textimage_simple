@@ -1,19 +1,31 @@
+<?php
+	/**
+	 * define widths for the different image sizes
+	 */
+	$width_small  = 100;
+	$width_medium = 150;
+	$width_large  = 200;
+?>
+
+
 <div class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
-  <?php if ($this->headline): ?>
-    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
-  <?php endif; ?>
+	<?php if ($this->headline): ?>
+	<<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+	<?php endif; ?>
 
-
+  
+  <?php if ( $this->image_files): ?>
+	
 	<div class="hoja_ti_image_float <?= $this->hoja_ti_position?> <?= $this->hoja_ti_width ?>">
 
 	<?php
 		if ( $this->hoja_ti_width == 'small' )
-			$width = 100;
+			$width = $width_small;
 		elseif ( $this->hoja_ti_width == 'medium' )
-			$width = 150;
+			$width = $width_medium;
 		else
-			$width = 200;
+			$width = $width_large;
 	?>
 
 	<?php foreach ( $this->image_files as $image ): ?>
@@ -21,10 +33,12 @@
 	<?php endforeach; ?>
 
 	</div>
+	
+	<?php endif; ?>
 
-  <?php echo $this->text; ?>
+	<?php echo $this->text; ?>
 
-  <br style="clear: both;" >
+	<br style="clear: both;" >
 
 </div>
 
